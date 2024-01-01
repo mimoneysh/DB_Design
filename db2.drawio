@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2024-01-01T12:10:09.834Z" agent="Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:120.0) Gecko/20100101 Firefox/120.0" etag="DfbJGNlhjJmTiWFNp3OU" version="22.1.15" type="github">
+<mxfile host="app.diagrams.net" modified="2024-01-01T12:27:20.541Z" agent="Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:120.0) Gecko/20100101 Firefox/120.0" etag="ii_T6d6597eK2mcW2rVO" version="22.1.15" type="github">
   <diagram id="R2lEEEUBdFMjLlhIrx00" name="Page-1">
-    <mxGraphModel dx="9187" dy="5381" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0" extFonts="Permanent Marker^https://fonts.googleapis.com/css?family=Permanent+Marker">
+    <mxGraphModel dx="5874" dy="3689" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0" extFonts="Permanent Marker^https://fonts.googleapis.com/css?family=Permanent+Marker">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -679,7 +679,7 @@
         <mxCell id="PCRB14Bkoi_nJQecKA2T-370" value="" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;fontSize=16;labelBackgroundColor=none;" vertex="1" parent="PCRB14Bkoi_nJQecKA2T-72">
           <mxGeometry y="150" width="390" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="PCRB14Bkoi_nJQecKA2T-371" value="" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;editable=1;overflow=hidden;whiteSpace=wrap;html=1;fontSize=16;labelBackgroundColor=none;" vertex="1" parent="PCRB14Bkoi_nJQecKA2T-370">
+        <mxCell id="PCRB14Bkoi_nJQecKA2T-371" value="FK" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;editable=1;overflow=hidden;whiteSpace=wrap;html=1;fontSize=16;labelBackgroundColor=none;" vertex="1" parent="PCRB14Bkoi_nJQecKA2T-370">
           <mxGeometry width="80" height="30" as="geometry">
             <mxRectangle width="80" height="30" as="alternateBounds" />
           </mxGeometry>
@@ -891,7 +891,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="PCRB14Bkoi_nJQecKA2T-226" value="Certificate usage" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;resizeLast=1;html=1;fontSize=16;labelBackgroundColor=none;fillColor=#60a917;fontColor=#ffffff;strokeColor=#2D7600;" vertex="1" parent="1">
-          <mxGeometry x="-60" y="-2050" width="270" height="120" as="geometry" />
+          <mxGeometry x="-80" y="-2050" width="270" height="120" as="geometry" />
         </mxCell>
         <mxCell id="PCRB14Bkoi_nJQecKA2T-227" value="" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=1;fontSize=16;labelBackgroundColor=none;" vertex="1" parent="PCRB14Bkoi_nJQecKA2T-226">
           <mxGeometry y="30" width="270" height="30" as="geometry" />
@@ -1099,7 +1099,7 @@
           <mxGeometry x="-2090" y="-1850" width="140" height="70" as="geometry" />
         </mxCell>
         <mxCell id="PCRB14Bkoi_nJQecKA2T-157" value="Issuer Certificate" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;resizeLast=1;html=1;fontSize=16;labelBackgroundColor=none;fillColor=#ffcd28;gradientColor=#ffa500;strokeColor=#d79b00;" vertex="1" parent="1">
-          <mxGeometry x="-3300" y="-2040" width="390" height="1290" as="geometry" />
+          <mxGeometry x="-3300" y="-1850" width="390" height="1290" as="geometry" />
         </mxCell>
         <mxCell id="PCRB14Bkoi_nJQecKA2T-158" value="" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=1;fontSize=16;labelBackgroundColor=none;" vertex="1" parent="PCRB14Bkoi_nJQecKA2T-157">
           <mxGeometry y="30" width="390" height="30" as="geometry" />
@@ -1647,13 +1647,13 @@
             <mxRectangle width="300" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="PCRB14Bkoi_nJQecKA2T-378" value="" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;rounded=0;" edge="1" parent="1" source="PCRB14Bkoi_nJQecKA2T-380" target="PCRB14Bkoi_nJQecKA2T-157">
+        <mxCell id="PCRB14Bkoi_nJQecKA2T-378" value="" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;rounded=0;" edge="1" parent="1" source="PCRB14Bkoi_nJQecKA2T-380" target="PCRB14Bkoi_nJQecKA2T-158">
           <mxGeometry width="100" height="100" relative="1" as="geometry">
             <mxPoint x="-2370" y="-1520" as="sourcePoint" />
             <mxPoint x="-2270" y="-1620" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="PCRB14Bkoi_nJQecKA2T-379" value="" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;rounded=0;" edge="1" parent="1" source="PCRB14Bkoi_nJQecKA2T-72" target="PCRB14Bkoi_nJQecKA2T-380">
+        <mxCell id="PCRB14Bkoi_nJQecKA2T-379" value="" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;rounded=0;" edge="1" parent="1" source="PCRB14Bkoi_nJQecKA2T-370" target="PCRB14Bkoi_nJQecKA2T-380">
           <mxGeometry width="100" height="100" relative="1" as="geometry">
             <mxPoint x="-2190" y="-1595" as="sourcePoint" />
             <mxPoint x="-2600" y="-1595" as="targetPoint" />
@@ -1666,6 +1666,21 @@
         </mxCell>
         <mxCell id="PCRB14Bkoi_nJQecKA2T-380" value="&lt;div&gt;every issuer &lt;br&gt;&lt;/div&gt;&lt;div&gt;has its&lt;/div&gt;&lt;div&gt;own certificates&lt;br&gt;&lt;/div&gt;" style="shape=rhombus;perimeter=rhombusPerimeter;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
           <mxGeometry x="-2620" y="-1520" width="208" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="PCRB14Bkoi_nJQecKA2T-627" value="" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;startArrow=ERmandOne;rounded=0;" edge="1" parent="1" source="PCRB14Bkoi_nJQecKA2T-628" target="PCRB14Bkoi_nJQecKA2T-158">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="-2410" y="-1900" as="sourcePoint" />
+            <mxPoint x="-2310" y="-2000" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PCRB14Bkoi_nJQecKA2T-629" value="" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;startArrow=ERmandOne;rounded=0;" edge="1" parent="1" source="PCRB14Bkoi_nJQecKA2T-191" target="PCRB14Bkoi_nJQecKA2T-628">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="-2150" y="-1975" as="sourcePoint" />
+            <mxPoint x="-2910" y="-1995" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PCRB14Bkoi_nJQecKA2T-628" value="if login successful:&lt;br&gt;&lt;div&gt;view, Store, revoke,&lt;/div&gt;&lt;div&gt;&amp;nbsp;update as per role&lt;/div&gt;authority" style="shape=rhombus;perimeter=rhombusPerimeter;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="-2690" y="-2050" width="280" height="160" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
