@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-01-02T04:25:44.717Z" agent="Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:120.0) Gecko/20100101 Firefox/120.0" etag="n7kM9nw0hCqV8A3mv6fF" version="22.1.16" type="github">
+<mxfile host="app.diagrams.net" modified="2024-01-02T04:27:54.868Z" agent="Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:120.0) Gecko/20100101 Firefox/120.0" etag="SieOlBiKc-jGE641fKsa" version="22.1.16" type="github">
   <diagram id="R2lEEEUBdFMjLlhIrx00" name="Page-1">
     <mxGraphModel dx="5194" dy="3350" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0" extFonts="Permanent Marker^https://fonts.googleapis.com/css?family=Permanent+Marker">
       <root>
@@ -929,19 +929,8 @@
         <mxCell id="PCRB14Bkoi_nJQecKA2T-287" value="can be revoked by authority" style="shape=rhombus;perimeter=rhombusPerimeter;whiteSpace=wrap;html=1;align=center;labelBackgroundColor=none;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" parent="1" vertex="1">
           <mxGeometry x="-339.9999999999999" y="-1699.9999999999998" width="140" height="90" as="geometry" />
         </mxCell>
-        <mxCell id="PCRB14Bkoi_nJQecKA2T-295" value="" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;labelBackgroundColor=none;fontColor=default;" parent="1" source="PCRB14Bkoi_nJQecKA2T-48" target="PCRB14Bkoi_nJQecKA2T-297" edge="1">
-          <mxGeometry width="100" height="100" relative="1" as="geometry">
-            <mxPoint x="-1460" y="-1325" as="sourcePoint" />
-            <mxPoint x="-1020" y="-1080" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="PCRB14Bkoi_nJQecKA2T-296" value="1 to many" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=none;" parent="PCRB14Bkoi_nJQecKA2T-295" vertex="1" connectable="0">
-          <mxGeometry x="0.1239" y="-4" relative="1" as="geometry">
-            <mxPoint as="offset" />
-          </mxGeometry>
-        </mxCell>
         <mxCell id="PCRB14Bkoi_nJQecKA2T-297" value="&lt;div&gt;person to&amp;nbsp;&lt;/div&gt;&lt;div&gt;whoom&amp;nbsp;&lt;/div&gt;&lt;div&gt;certificate&amp;nbsp;&lt;/div&gt;&lt;div&gt;belongs&lt;/div&gt;" style="shape=rhombus;perimeter=rhombusPerimeter;whiteSpace=wrap;html=1;align=center;labelBackgroundColor=none;" parent="1" vertex="1">
-          <mxGeometry x="-1650" y="-1220" width="170" height="90" as="geometry" />
+          <mxGeometry x="-1540" y="-1310" width="170" height="90" as="geometry" />
         </mxCell>
         <mxCell id="PCRB14Bkoi_nJQecKA2T-311" value="" style="endArrow=none;html=1;rounded=0;dashed=1;dashPattern=1 2;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;labelBackgroundColor=none;fontColor=default;" parent="1" source="PCRB14Bkoi_nJQecKA2T-314" target="PCRB14Bkoi_nJQecKA2T-72" edge="1">
           <mxGeometry relative="1" as="geometry">
@@ -1360,17 +1349,6 @@
             <mxPoint x="-2270" y="-1620" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="PCRB14Bkoi_nJQecKA2T-379" value="" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;rounded=0;" parent="1" source="PCRB14Bkoi_nJQecKA2T-370" target="PCRB14Bkoi_nJQecKA2T-380" edge="1">
-          <mxGeometry width="100" height="100" relative="1" as="geometry">
-            <mxPoint x="-2190" y="-1595" as="sourcePoint" />
-            <mxPoint x="-2600" y="-1595" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="PCRB14Bkoi_nJQecKA2T-381" value="1 to many" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="PCRB14Bkoi_nJQecKA2T-379" vertex="1" connectable="0">
-          <mxGeometry x="-0.0154" y="-1" relative="1" as="geometry">
-            <mxPoint as="offset" />
-          </mxGeometry>
-        </mxCell>
         <mxCell id="PCRB14Bkoi_nJQecKA2T-380" value="&lt;div&gt;every issuer &lt;br&gt;&lt;/div&gt;&lt;div&gt;has its&lt;/div&gt;&lt;div&gt;own certificates&lt;br&gt;&lt;/div&gt;" style="shape=rhombus;perimeter=rhombusPerimeter;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
           <mxGeometry x="-2620" y="-1520" width="208" height="120" as="geometry" />
         </mxCell>
@@ -1391,6 +1369,39 @@
             <Array as="points">
               <mxPoint x="-1710" y="-1720" />
             </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sTGas-mFVDPfC52rBdnj-130" value="1 to many" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="sTGas-mFVDPfC52rBdnj-127">
+          <mxGeometry x="0.3154" y="-4" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sTGas-mFVDPfC52rBdnj-128" value="" style="endArrow=none;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="PCRB14Bkoi_nJQecKA2T-380" target="PCRB14Bkoi_nJQecKA2T-370">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="-2400" y="-1470" as="sourcePoint" />
+            <mxPoint x="-2350" y="-1520" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="-2340" y="-1545" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sTGas-mFVDPfC52rBdnj-129" value="1 to many" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="sTGas-mFVDPfC52rBdnj-128">
+          <mxGeometry x="0.2133" y="3" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sTGas-mFVDPfC52rBdnj-131" value="" style="endArrow=none;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="PCRB14Bkoi_nJQecKA2T-48" target="PCRB14Bkoi_nJQecKA2T-297">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="-1710" y="-1080" as="sourcePoint" />
+            <mxPoint x="-1660" y="-1130" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="-1650" y="-1260" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sTGas-mFVDPfC52rBdnj-132" value="1 to many" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="sTGas-mFVDPfC52rBdnj-131">
+          <mxGeometry x="-0.1284" y="3" relative="1" as="geometry">
+            <mxPoint y="1" as="offset" />
           </mxGeometry>
         </mxCell>
       </root>
