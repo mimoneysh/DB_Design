@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-01-02T04:01:19.346Z" agent="Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:120.0) Gecko/20100101 Firefox/120.0" etag="PSapF1hOS7GVXKvICdyP" version="22.1.16" type="github">
+<mxfile host="app.diagrams.net" modified="2024-01-02T04:02:54.860Z" agent="Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:120.0) Gecko/20100101 Firefox/120.0" etag="y9KHO4qWA52Auz2xMfU_" version="22.1.16" type="github">
   <diagram id="R2lEEEUBdFMjLlhIrx00" name="Page-1">
     <mxGraphModel dx="4496" dy="2991" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0" extFonts="Permanent Marker^https://fonts.googleapis.com/css?family=Permanent+Marker">
       <root>
@@ -1095,8 +1095,8 @@
             <mxPoint x="-1645" y="-1720" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="PCRB14Bkoi_nJQecKA2T-314" value="&lt;div&gt;login is allowed &lt;br&gt;&lt;/div&gt;&lt;div&gt;to issuer&#39;s&lt;/div&gt;" style="shape=rhombus;perimeter=rhombusPerimeter;whiteSpace=wrap;html=1;align=center;labelBackgroundColor=none;" parent="1" vertex="1">
-          <mxGeometry x="-2090" y="-1850" width="140" height="70" as="geometry" />
+        <mxCell id="PCRB14Bkoi_nJQecKA2T-314" value="&lt;div&gt;login is allowed &lt;br&gt;&lt;/div&gt;&lt;div&gt;to issuer&#39;s&lt;/div&gt;&amp;nbsp;emp" style="shape=rhombus;perimeter=rhombusPerimeter;whiteSpace=wrap;html=1;align=center;labelBackgroundColor=none;" parent="1" vertex="1">
+          <mxGeometry x="-2090" y="-1860" width="160" height="90" as="geometry" />
         </mxCell>
         <mxCell id="PCRB14Bkoi_nJQecKA2T-157" value="Issuer Certificate" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;resizeLast=1;html=1;fontSize=16;labelBackgroundColor=none;fillColor=#ffcd28;gradientColor=#ffa500;strokeColor=#d79b00;" parent="1" vertex="1">
           <mxGeometry x="-3300" y="-1850" width="390" height="1130" as="geometry" />
