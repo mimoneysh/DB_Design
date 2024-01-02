@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-01-02T09:05:22.710Z" agent="Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:120.0) Gecko/20100101 Firefox/120.0" etag="r3aaTHT3Sa_AJs0GI6Yv" version="22.1.16" type="github">
+<mxfile host="app.diagrams.net" modified="2024-01-02T09:06:15.810Z" agent="Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:120.0) Gecko/20100101 Firefox/120.0" etag="6eYAuAkjvly3XD8ab5iO" version="22.1.16" type="github">
   <diagram id="R2lEEEUBdFMjLlhIrx00" name="Page-1">
     <mxGraphModel dx="4941" dy="4047" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0" extFonts="Permanent Marker^https://fonts.googleapis.com/css?family=Permanent+Marker">
       <root>
@@ -635,7 +635,7 @@
             <mxRectangle width="80" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="PCRB14Bkoi_nJQecKA2T-203" value="email/username VARCHAR (20) NOT NULL" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;whiteSpace=wrap;html=1;fontSize=16;labelBackgroundColor=none;" parent="PCRB14Bkoi_nJQecKA2T-201" vertex="1">
+        <mxCell id="PCRB14Bkoi_nJQecKA2T-203" value="username VARCHAR (20) NOT NULL" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;whiteSpace=wrap;html=1;fontSize=16;labelBackgroundColor=none;" parent="PCRB14Bkoi_nJQecKA2T-201" vertex="1">
           <mxGeometry x="80" width="350" height="30" as="geometry">
             <mxRectangle width="350" height="30" as="alternateBounds" />
           </mxGeometry>
