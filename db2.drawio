@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-01-02T08:57:13.535Z" agent="Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:120.0) Gecko/20100101 Firefox/120.0" etag="FmmFXcsubDacMB1KuMC1" version="22.1.16" type="github">
+<mxfile host="app.diagrams.net" modified="2024-01-02T08:58:13.826Z" agent="Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:120.0) Gecko/20100101 Firefox/120.0" etag="ZTt5aaPXOCb7AKqHCB8b" version="22.1.16" type="github">
   <diagram id="R2lEEEUBdFMjLlhIrx00" name="Page-1">
     <mxGraphModel dx="5556" dy="4364" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0" extFonts="Permanent Marker^https://fonts.googleapis.com/css?family=Permanent+Marker">
       <root>
@@ -940,13 +940,13 @@
             <mxPoint x="-250.75" y="-1095.9499999999998" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="PCRB14Bkoi_nJQecKA2T-284" value="digital Trace" style="shape=rhombus;perimeter=rhombusPerimeter;whiteSpace=wrap;html=1;align=center;labelBackgroundColor=none;" parent="1" vertex="1">
+        <mxCell id="PCRB14Bkoi_nJQecKA2T-284" value="is used" style="shape=rhombus;perimeter=rhombusPerimeter;whiteSpace=wrap;html=1;align=center;labelBackgroundColor=none;" parent="1" vertex="1">
           <mxGeometry x="-610" y="-2560" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="PCRB14Bkoi_nJQecKA2T-287" value="to CRL" style="shape=rhombus;perimeter=rhombusPerimeter;whiteSpace=wrap;html=1;align=center;labelBackgroundColor=none;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" parent="1" vertex="1">
+        <mxCell id="PCRB14Bkoi_nJQecKA2T-287" value="is revoked" style="shape=rhombus;perimeter=rhombusPerimeter;whiteSpace=wrap;html=1;align=center;labelBackgroundColor=none;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" parent="1" vertex="1">
           <mxGeometry x="-609.9999999999999" y="-2370" width="140" height="90" as="geometry" />
         </mxCell>
-        <mxCell id="PCRB14Bkoi_nJQecKA2T-297" value="end user" style="shape=rhombus;perimeter=rhombusPerimeter;whiteSpace=wrap;html=1;align=center;labelBackgroundColor=none;" parent="1" vertex="1">
+        <mxCell id="PCRB14Bkoi_nJQecKA2T-297" value="belongs to" style="shape=rhombus;perimeter=rhombusPerimeter;whiteSpace=wrap;html=1;align=center;labelBackgroundColor=none;" parent="1" vertex="1">
           <mxGeometry x="-1839" y="-1700" width="129" height="70" as="geometry" />
         </mxCell>
         <mxCell id="PCRB14Bkoi_nJQecKA2T-157" value="Issuer Certificate" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;resizeLast=1;html=1;fontSize=16;labelBackgroundColor=none;fillColor=#ffcd28;gradientColor=#ffa500;strokeColor=#d79b00;" parent="1" vertex="1">
@@ -1362,7 +1362,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="PCRB14Bkoi_nJQecKA2T-380" value="has" style="shape=rhombus;perimeter=rhombusPerimeter;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
-          <mxGeometry x="-2630" y="-1840" width="80" height="70" as="geometry" />
+          <mxGeometry x="-2680" y="-1960" width="80" height="70" as="geometry" />
         </mxCell>
         <mxCell id="sTGas-mFVDPfC52rBdnj-118" value="" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;labelBackgroundColor=none;fontColor=default;" edge="1" parent="1" source="sTGas-mFVDPfC52rBdnj-123" target="PCRB14Bkoi_nJQecKA2T-1">
           <mxGeometry width="100" height="100" relative="1" as="geometry">
