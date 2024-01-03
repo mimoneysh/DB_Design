@@ -38,7 +38,7 @@ CREATE TABLE  Certificate(
     serial_number VARCHAR (64) PRIMARY KEY,
     issue_date DATE NOT NULL,
     expiry_date DATE NOT NULL,
-    version VARCHAR NOT NULL,
+    version VARCHAR(10) NOT NULL,
     cert_type VARCHAR(20) NOT NULL,
     issuer_id VARCHAR(20),
     
