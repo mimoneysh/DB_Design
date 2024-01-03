@@ -1,6 +1,7 @@
 use testDB;
 
-DROP TABLE IF EXISTS Subject,Issuer,Login,Certificate,Issuer_Certificate,Cert_usage,Revocation_Data,Audit_Trail;
+
+DROP TABLE IF EXISTS Subject;
 
 CREATE TABLE Subject (
     subj_srNo INT PRIMARY KEY,
@@ -14,6 +15,8 @@ CREATE TABLE Subject (
     subj_Email VARCHAR(50) UNIQUE NOT NULL
 );
 
+DROP TABLE IF EXISTS Issuer;
+
 CREATE TABLE Issuer (
     issuer_id VARCHAR(20) PRIMARY KEY,
     issuer_C VARCHAR(15) NOT NULL,
@@ -25,6 +28,8 @@ CREATE TABLE Issuer (
     
 );
 
+DROP TABLE IF EXISTS Login;
+
 create TABLE Login (
 	login_id VARCHAR(50) PRIMARY KEY,
     pass VARCHAR(20) NOT NULL,
@@ -33,6 +38,8 @@ create TABLE Login (
     issuer_id VARCHAR(20) NOT NULL,
     FOREIGN KEY (issuer_id) REFERENCES Issuer(issuer_id)
 );
+
+DROP TABLE IF EXISTS Certificate;
 
 CREATE TABLE  Certificate(
     serial_number VARCHAR (64) PRIMARY KEY,
@@ -69,6 +76,8 @@ CREATE TABLE  Certificate(
 );
 
 
+DROP TABLE IF EXISTS Issuer_Certificate;
+
 
 CREATE TABLE Issuer_Certificate (
     issuer_cert_srNo INT PRIMARY KEY,
@@ -95,6 +104,7 @@ CREATE TABLE Issuer_Certificate (
     raw_iCert TEXT NOT NULL
 );
 
+DROP TABLE IF EXISTS Cert_usage;
 
 create TABLE Cert_usage(
     serial_number VARCHAR (64) PRIMARY KEY,
@@ -104,7 +114,8 @@ create TABLE Cert_usage(
     count INT     
     );
     
-    
+DROP TABLE IF EXISTS Revocation_Data;
+
 create TABLE Revocation_Data(
     serial_number VARCHAR (64) PRIMARY KEY,
     FOREIGN KEY (serial_number) REFERENCES Certificate(serial_number),
@@ -115,7 +126,7 @@ create TABLE Revocation_Data(
 
 
 
-
+DROP TABLE IF EXISTS Audit_Trail;    
 
  create TABLE Audit_Trail(
      
