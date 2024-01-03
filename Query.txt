@@ -1,5 +1,7 @@
 use testDB;
 
+DROP TABLE IF EXISTS Subject,Issuer,Login,Certificate,Issuer_Certificate,Cert_usage,Revocation_Data,Audit_Trail;
+
 CREATE TABLE Subject (
     subj_srNo INT PRIMARY KEY,
     subj_C VARCHAR(15) NOT NULL,
