@@ -1,4 +1,8 @@
-use testDB;
+DROP DATABASE IF EXISTS testDB;
+
+CREATE DATABASE testDB;
+
+USE testDB;
 
 
 DROP TABLE IF EXISTS Subject;
@@ -23,7 +27,7 @@ CREATE TABLE Issuer (
     issuer_O VARCHAR(255) NOT NULL,
     issuer_OU VARCHAR(255) NOT NULL,
     
-    issuer_CN VARCHAR(255) NOT NULL,
+    issuer_CN VARCHAR(255) NOT NULL
     
     
 );
@@ -147,5 +151,24 @@ DROP TABLE IF EXISTS Audit_Trail;
 
 
 
-ALTER TABLE Issuer ADD issuer_cert_srNo VARCHAR (64),
-FOREIGN KEY (issuer_cert_srNo) REFERENCES Issuer_Certificate(issuer_cert_srNo);
+ALTER TABLE Issuer
+ADD COLUMN issuer_cert_srNo VARCHAR(64),
+ADD FOREIGN KEY (issuer_cert_srNo) REFERENCES Issuer_Certificate(issuer_cert_srNo);
+
+
+
+
+SHOW TABLES;
+
+
+-- CHECK CREATION
+
+describe Audit_Trail;
+describe Login;
+DESCRIBE Issuer;
+DESCRIBE Subject;
+describe Issuer_Certificate;
+describe Certificate;
+describe Revocation_Data;
+describe Cert_usage;
+
