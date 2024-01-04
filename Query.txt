@@ -80,7 +80,7 @@ DROP TABLE IF EXISTS Issuer_Certificate;
 
 
 CREATE TABLE Issuer_Certificate (
-    issuer_cert_srNo INT PRIMARY KEY,
+    issuer_cert_srNo VARCHAR (64) PRIMARY KEY,
     issuer_ID VARCHAR(20),
     FOREIGN KEY (issuer_ID) REFERENCES Issuer(issuer_id),
     iCert_version VARCHAR(10) NOT NULL,
