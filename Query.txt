@@ -1,6 +1,7 @@
 DROP DATABASE IF EXISTS testDB;
 
 CREATE DATABASE testDB;
+SHOW DATABASES;
 
 USE testDB;
 
@@ -43,6 +44,36 @@ create TABLE Login (
     FOREIGN KEY (issuer_id) REFERENCES Issuer(issuer_id)
 );
 
+DROP TABLE IF EXISTS Issuer_Certificate;
+
+
+CREATE TABLE Issuer_Certificate (
+    issuer_cert_srNo VARCHAR (64) PRIMARY KEY,
+    issuer_ID VARCHAR(20),
+    FOREIGN KEY (issuer_ID) REFERENCES Issuer(issuer_id),
+    
+    iCert_version VARCHAR(10) NOT NULL,
+    iCert_type VARCHAR(20) NOT NULL,
+    iCert_issue_date DATE NOT NULL,
+    iCert_expiry_date DATE NOT NULL,
+    iCert_fp_digest VARCHAR(10) NOT NULL,
+    iCert_fp_algo VARCHAR(255) NOT NULL,
+    iCert_pk VARCHAR(600) NOT NULL,
+    iCert_pk_algo VARCHAR(5),
+    iCert_pk_size INT,
+    iCert_pk_digest VARCHAR(5),
+    iCert_pk_digest_algo VARCHAR(50),
+    iCert_BC_subjType VARCHAR(20),
+    iCert_BC_maxPathL VARCHAR(20),
+    iCert_key_usage VARCHAR(20),
+    iCert_sign VARCHAR(600) NOT NULL,
+    iCert_sign_algo VARCHAR(50) NOT NULL,
+    iCert_ocsp_url VARCHAR(50),
+    iCert_CRL VARCHAR(255) NOT NULL,
+    raw_iCert TEXT NOT NULL
+);
+
+
 DROP TABLE IF EXISTS Certificate;
 
 CREATE TABLE  Certificate(
@@ -51,9 +82,13 @@ CREATE TABLE  Certificate(
     expiry_date DATE NOT NULL,
     version VARCHAR(10) NOT NULL,
     cert_type VARCHAR(20) NOT NULL,
-    issuer_id VARCHAR(20),
     
+    issuer_id VARCHAR(20),    
     FOREIGN KEY (issuer_id) REFERENCES Issuer(issuer_id),
+    
+    issuer_cert_srNo VARCHAR (64),
+    FOREIGN KEY (issuer_cert_srNo) REFERENCES Issuer_Certificate(issuer_cert_srNo),
+    
     subj_srNo INT,
     FOREIGN KEY (subj_srNo) REFERENCES Subject(subj_srNo),
     
@@ -80,33 +115,6 @@ CREATE TABLE  Certificate(
 );
 
 
-DROP TABLE IF EXISTS Issuer_Certificate;
-
-
-CREATE TABLE Issuer_Certificate (
-    issuer_cert_srNo VARCHAR (64) PRIMARY KEY,
-    issuer_ID VARCHAR(20),
-    FOREIGN KEY (issuer_ID) REFERENCES Issuer(issuer_id),
-    iCert_version VARCHAR(10) NOT NULL,
-    iCert_type VARCHAR(20) NOT NULL,
-    iCert_issue_date DATE NOT NULL,
-    iCert_expiry_date DATE NOT NULL,
-    iCert_fp_digest VARCHAR(10) NOT NULL,
-    iCert_fp_algo VARCHAR(255) NOT NULL,
-    iCert_pk VARCHAR(600) NOT NULL,
-    iCert_pk_algo VARCHAR(5),
-    iCert_pk_size INT,
-    iCert_pk_digest VARCHAR(5),
-    iCert_pk_digest_algo VARCHAR(50),
-    iCert_BC_subjType VARCHAR(20),
-    iCert_BC_maxPathL VARCHAR(20),
-    iCert_key_usage VARCHAR(20),
-    iCert_sign VARCHAR(600) NOT NULL,
-    iCert_sign_algo VARCHAR(50) NOT NULL,
-    iCert_ocsp_url VARCHAR(50),
-    iCert_CRL VARCHAR(255) NOT NULL,
-    raw_iCert TEXT NOT NULL
-);
 
 DROP TABLE IF EXISTS Cert_usage;
 
@@ -151,24 +159,17 @@ DROP TABLE IF EXISTS Audit_Trail;
 
 
 
-ALTER TABLE Issuer
-ADD COLUMN issuer_cert_srNo VARCHAR(64),
-ADD FOREIGN KEY (issuer_cert_srNo) REFERENCES Issuer_Certificate(issuer_cert_srNo);
-
-
-
-
 SHOW TABLES;
 
 
 -- CHECK CREATION
 
-describe Audit_Trail;
-describe Login;
+DESCRIBE Audit_Trail;
+DESCRIBE Login;
 DESCRIBE Issuer;
 DESCRIBE Subject;
-describe Issuer_Certificate;
-describe Certificate;
-describe Revocation_Data;
-describe Cert_usage;
+DESCRIBE Issuer_Certificate;
+DESCRIBE Certificate;
+DESCRIBE Revocation_Data;
+DESCRIBE Cert_usage;
 
