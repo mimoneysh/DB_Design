@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-01-04T06:01:43.277Z" agent="Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:121.0) Gecko/20100101 Firefox/121.0" etag="X6dkV818_-sL8dSwO2Sp" version="22.1.16" type="github">
+<mxfile host="app.diagrams.net" modified="2024-01-04T06:03:04.247Z" agent="Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:121.0) Gecko/20100101 Firefox/121.0" etag="9iCZwl5fy3G7RyVKSlsO" version="22.1.16" type="github">
   <diagram id="R2lEEEUBdFMjLlhIrx00" name="Page-1">
     <mxGraphModel dx="5419" dy="4293" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0" extFonts="Permanent Marker^https://fonts.googleapis.com/css?family=Permanent+Marker">
       <root>
@@ -895,7 +895,7 @@
           <mxGeometry x="-685" y="-1985" width="110" height="65" as="geometry" />
         </mxCell>
         <mxCell id="PCRB14Bkoi_nJQecKA2T-297" value="belongs to" style="shape=rhombus;perimeter=rhombusPerimeter;whiteSpace=wrap;html=1;align=center;labelBackgroundColor=none;" parent="1" vertex="1">
-          <mxGeometry x="-1870" y="-1560" width="129" height="70" as="geometry" />
+          <mxGeometry x="-1839" y="-1560" width="129" height="70" as="geometry" />
         </mxCell>
         <mxCell id="PCRB14Bkoi_nJQecKA2T-157" value="Issuer Certificate" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;resizeLast=1;html=1;fontSize=16;labelBackgroundColor=none;fillColor=#ffcd28;gradientColor=#ffa500;strokeColor=#d79b00;" parent="1" vertex="1">
           <mxGeometry x="-3290" y="-2090" width="540" height="860" as="geometry" />
@@ -1356,7 +1356,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="a8R6ChUF0B7tEaSIY0sK-8" value="Certificate Chaining" style="shape=rhombus;perimeter=rhombusPerimeter;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
-          <mxGeometry x="-2330" y="-1754" width="210" height="100" as="geometry" />
+          <mxGeometry x="-2324" y="-1710" width="210" height="100" as="geometry" />
         </mxCell>
         <mxCell id="a8R6ChUF0B7tEaSIY0sK-10" value="" style="endArrow=none;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="PCRB14Bkoi_nJQecKA2T-157" target="a8R6ChUF0B7tEaSIY0sK-8">
           <mxGeometry relative="1" as="geometry">
