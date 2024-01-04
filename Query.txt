@@ -143,3 +143,9 @@ DROP TABLE IF EXISTS Audit_Trail;
      
 	)AUTO_INCREMENT=101;
  
+
+
+
+
+ALTER TABLE Issuer ADD issuer_cert_srNo VARCHAR (64),
+FOREIGN KEY (issuer_cert_srNo) REFERENCES Issuer_Certificate(issuer_cert_srNo);
