@@ -37,7 +37,7 @@ DROP TABLE IF EXISTS Login;
 
 create TABLE Login (
 	login_id VARCHAR(50) PRIMARY KEY,
-    pass VARCHAR(20) NOT NULL,
+    pass VARCHAR(50) NOT NULL,
     role VARCHAR(50)NOT NULL,
     username VARCHAR(50)NOT NULL,
     issuer_id VARCHAR(20) NOT NULL,
