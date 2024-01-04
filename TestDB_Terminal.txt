@@ -1,10 +1,26 @@
+mysql>
+mysql> CREATE DATABASE testDB;
+Query OK, 1 row affected (0.01 sec)
 
-mysql> create database testDB;
-Query OK, 1 row affected (0.07 sec)
+mysql> SHOW DATABASES;
++--------------------+
+| Database           |
++--------------------+
+| hrms               |
+| information_schema |
+| manish             |
+| mysql              |
+| performance_schema |
+| sakila             |
+| sys                |
+| testdb             |
+| wbj                |
+| world              |
++--------------------+
+10 rows in set (0.00 sec)
 
-
-
-mysql> use testDB;
+mysql>
+mysql> USE testDB;
 Database changed
 mysql>
 mysql>
@@ -23,10 +39,11 @@ mysql> CREATE TABLE Subject (
     ->     subj_OU VARCHAR(20),
     ->     subj_Email VARCHAR(50) UNIQUE NOT NULL
     -> );
-Query OK, 0 rows affected (0.09 sec)
+Query OK, 0 rows affected (0.08 sec)
 
+mysql>
 mysql> DROP TABLE IF EXISTS Issuer;
-Query OK, 0 rows affected, 1 warning (0.00 sec)
+Query OK, 0 rows affected, 1 warning (0.01 sec)
 
 mysql>
 mysql> CREATE TABLE Issuer (
@@ -35,11 +52,11 @@ mysql> CREATE TABLE Issuer (
     ->     issuer_O VARCHAR(255) NOT NULL,
     ->     issuer_OU VARCHAR(255) NOT NULL,
     ->
-    ->     issuer_CN VARCHAR(255) NOT NULL,
-    ->     UNIQUE (issuer_CN)
+    ->     issuer_CN VARCHAR(255) NOT NULL
+    ->
     ->
     -> );
-Query OK, 0 rows affected (0.04 sec)
+Query OK, 0 rows affected (0.06 sec)
 
 mysql>
 mysql> DROP TABLE IF EXISTS Login;
@@ -48,14 +65,48 @@ Query OK, 0 rows affected, 1 warning (0.00 sec)
 mysql>
 mysql> create TABLE Login (
     ->  login_id VARCHAR(50) PRIMARY KEY,
-    ->     pass VARCHAR(20) NOT NULL,
+    ->     pass VARCHAR(50) NOT NULL,
     ->     role VARCHAR(50)NOT NULL,
     ->     username VARCHAR(50)NOT NULL,
     ->     issuer_id VARCHAR(20) NOT NULL,
     ->     FOREIGN KEY (issuer_id) REFERENCES Issuer(issuer_id)
     -> );
-Query OK, 0 rows affected (0.03 sec)
+Query OK, 0 rows affected (0.05 sec)
 
+mysql>
+mysql> DROP TABLE IF EXISTS Issuer_Certificate;
+Query OK, 0 rows affected, 1 warning (0.00 sec)
+
+mysql>
+mysql>
+mysql> CREATE TABLE Issuer_Certificate (
+    ->     issuer_cert_srNo VARCHAR (64) PRIMARY KEY,
+    ->     issuer_ID VARCHAR(20),
+    ->     FOREIGN KEY (issuer_ID) REFERENCES Issuer(issuer_id),
+    ->
+    ->     iCert_version VARCHAR(10) NOT NULL,
+    ->     iCert_type VARCHAR(20) NOT NULL,
+    ->     iCert_issue_date DATE NOT NULL,
+    ->     iCert_expiry_date DATE NOT NULL,
+    ->     iCert_fp_digest VARCHAR(10) NOT NULL,
+    ->     iCert_fp_algo VARCHAR(255) NOT NULL,
+    ->     iCert_pk VARCHAR(600) NOT NULL,
+    ->     iCert_pk_algo VARCHAR(5),
+    ->     iCert_pk_size INT,
+    ->     iCert_pk_digest VARCHAR(5),
+    ->     iCert_pk_digest_algo VARCHAR(50),
+    ->     iCert_BC_subjType VARCHAR(20),
+    ->     iCert_BC_maxPathL VARCHAR(20),
+    ->     iCert_key_usage VARCHAR(20),
+    ->     iCert_sign VARCHAR(600) NOT NULL,
+    ->     iCert_sign_algo VARCHAR(50) NOT NULL,
+    ->     iCert_ocsp_url VARCHAR(50),
+    ->     iCert_CRL VARCHAR(255) NOT NULL,
+    ->     raw_iCert TEXT NOT NULL
+    -> );
+Query OK, 0 rows affected (0.04 sec)
+
+mysql>
 mysql>
 mysql> DROP TABLE IF EXISTS Certificate;
 Query OK, 0 rows affected, 1 warning (0.00 sec)
@@ -67,9 +118,13 @@ mysql> CREATE TABLE  Certificate(
     ->     expiry_date DATE NOT NULL,
     ->     version VARCHAR(10) NOT NULL,
     ->     cert_type VARCHAR(20) NOT NULL,
-    ->     issuer_id VARCHAR(20),
     ->
-    ->     FOREIGN KEY (issuer_id) REFERENCES Issuer(issuer_id),
+    ->     -- issuer_id VARCHAR(20),
+    ->     -- FOREIGN KEY (issuer_id) REFERENCES Issuer(issuer_id),
+    ->
+    ->     issuer_cert_srNo VARCHAR (64),
+    ->     FOREIGN KEY (issuer_cert_srNo) REFERENCES Issuer_Certificate(issuer_cert_srNo),
+    ->
     ->     subj_srNo INT,
     ->     FOREIGN KEY (subj_srNo) REFERENCES Subject(subj_srNo),
     ->
@@ -98,37 +153,6 @@ Query OK, 0 rows affected (0.04 sec)
 
 mysql>
 mysql>
-mysql> DROP TABLE IF EXISTS Issuer_Certificate;
-Query OK, 0 rows affected, 1 warning (0.00 sec)
-
-mysql>
-mysql>
-mysql> CREATE TABLE Issuer_Certificate (
-    ->     issuer_cert_srNo INT PRIMARY KEY,
-    ->     issuer_ID VARCHAR(20),
-    ->     FOREIGN KEY (issuer_ID) REFERENCES Issuer(issuer_id),
-    ->     iCert_version VARCHAR(10) NOT NULL,
-    ->     iCert_type VARCHAR(20) NOT NULL,
-    ->     iCert_issue_date DATE NOT NULL,
-    ->     iCert_expiry_date DATE NOT NULL,
-    ->     iCert_fp_digest VARCHAR(10) NOT NULL,
-    ->     iCert_fp_algo VARCHAR(255) NOT NULL,
-    ->     iCert_pk VARCHAR(600) NOT NULL,
-    ->     iCert_pk_algo VARCHAR(5),
-    ->     iCert_pk_size INT,
-    ->     iCert_pk_digest VARCHAR(5),
-    ->     iCert_pk_digest_algo VARCHAR(50),
-    ->     iCert_BC_subjType VARCHAR(20),
-    ->     iCert_BC_maxPathL VARCHAR(20),
-    ->     iCert_key_usage VARCHAR(20),
-    ->     iCert_sign VARCHAR(600) NOT NULL,
-    ->     iCert_sign_algo VARCHAR(50) NOT NULL,
-    ->     iCert_ocsp_url VARCHAR(50),
-    ->     iCert_CRL VARCHAR(255) NOT NULL,
-    ->     raw_iCert TEXT NOT NULL
-    -> );
-Query OK, 0 rows affected (0.04 sec)
-
 mysql>
 mysql> DROP TABLE IF EXISTS Cert_usage;
 Query OK, 0 rows affected, 1 warning (0.00 sec)
@@ -154,7 +178,7 @@ mysql> create TABLE Revocation_Data(
     ->     revoke_date_time DATETIME NOT NULL,
     ->     reason VARCHAR(255)
     ->     );
-Query OK, 0 rows affected (0.03 sec)
+Query OK, 0 rows affected (0.02 sec)
 
 mysql>
 mysql>
@@ -180,22 +204,12 @@ mysql>  create TABLE Audit_Trail(
     ->  )AUTO_INCREMENT=101;
 Query OK, 0 rows affected (0.03 sec)
 
-mysql>  show tables;
-+--------------------+
-| Tables_in_testdb   |
-+--------------------+
-| audit_trail        |
-| cert_usage         |
-| certificate        |
-| issuer             |
-| issuer_certificate |
-| login              |
-| revocation_data    |
-| subject            |
-+--------------------+
-8 rows in set (0.01 sec)
-
-mysql> show tables;
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql> SHOW TABLES;
 +--------------------+
 | Tables_in_testdb   |
 +--------------------+
@@ -210,7 +224,11 @@ mysql> show tables;
 +--------------------+
 8 rows in set (0.00 sec)
 
-mysql> describe audit_trail;
+mysql>
+mysql>
+mysql> -- CHECK CREATION
+mysql>
+mysql> DESCRIBE Audit_Trail;
 +------------------+--------------+------+-----+---------+----------------+
 | Field            | Type         | Null | Key | Default | Extra          |
 +------------------+--------------+------+-----+---------+----------------+
@@ -224,49 +242,21 @@ mysql> describe audit_trail;
 | longitude        | decimal(9,6) | YES  |     | NULL    |                |
 | login_place      | varchar(20)  | YES  |     | NULL    |                |
 +------------------+--------------+------+-----+---------+----------------+
-9 rows in set (0.01 sec)
+9 rows in set (0.00 sec)
 
-mysql> describe cert_usage;
-+---------------+--------------+------+-----+---------+-------+
-| Field         | Type         | Null | Key | Default | Extra |
-+---------------+--------------+------+-----+---------+-------+
-| serial_number | varchar(64)  | NO   | PRI | NULL    |       |
-| time_stamp    | datetime     | NO   |     | NULL    |       |
-| remark        | varchar(255) | YES  |     | NULL    |       |
-| count         | int          | YES  |     | NULL    |       |
-+---------------+--------------+------+-----+---------+-------+
-4 rows in set (0.00 sec)
+mysql> DESCRIBE Login;
++-----------+-------------+------+-----+---------+-------+
+| Field     | Type        | Null | Key | Default | Extra |
++-----------+-------------+------+-----+---------+-------+
+| login_id  | varchar(50) | NO   | PRI | NULL    |       |
+| pass      | varchar(50) | NO   |     | NULL    |       |
+| role      | varchar(50) | NO   |     | NULL    |       |
+| username  | varchar(50) | NO   |     | NULL    |       |
+| issuer_id | varchar(20) | NO   | MUL | NULL    |       |
++-----------+-------------+------+-----+---------+-------+
+5 rows in set (0.00 sec)
 
-mysql> describe certificate;
-+----------------------------+--------------+------+-----+---------+-------+
-| Field                      | Type         | Null | Key | Default | Extra |
-+----------------------------+--------------+------+-----+---------+-------+
-| serial_number              | varchar(64)  | NO   | PRI | NULL    |       |
-| issue_date                 | date         | NO   |     | NULL    |       |
-| expiry_date                | date         | NO   |     | NULL    |       |
-| version                    | varchar(10)  | NO   |     | NULL    |       |
-| cert_type                  | varchar(20)  | NO   |     | NULL    |       |
-| issuer_id                  | varchar(20)  | YES  | MUL | NULL    |       |
-| subj_srNo                  | int          | YES  | MUL | NULL    |       |
-| cert_fp_Digest             | varchar(10)  | NO   |     | NULL    |       |
-| cert_fp_algo               | varchar(40)  | NO   |     | NULL    |       |
-| cert_public_key            | varchar(600) | NO   |     | NULL    |       |
-| cert_publicKey_algo        | varchar(5)   | YES  |     | NULL    |       |
-| cert_publicKey_size        | int          | YES  |     | NULL    |       |
-| cert_publicKey_digest      | varchar(5)   | YES  |     | NULL    |       |
-| cert_publicKey_digest_algo | varchar(60)  | YES  |     | NULL    |       |
-| cert_BC_subjType           | varchar(20)  | YES  |     | NULL    |       |
-| cert_BC_MpathL             | varchar(20)  | YES  |     | NULL    |       |
-| cert_key_usage             | varchar(20)  | YES  |     | NULL    |       |
-| cert_sign                  | varchar(600) | NO   |     | NULL    |       |
-| cert_sign_algo             | varchar(50)  | NO   |     | NULL    |       |
-| cert_ocsp_url              | varchar(50)  | YES  |     | NULL    |       |
-| cert_CRL_distPt            | varchar(255) | NO   |     | NULL    |       |
-| raw_certificate            | text         | NO   |     | NULL    |       |
-+----------------------------+--------------+------+-----+---------+-------+
-22 rows in set (0.00 sec)
-
-mysql> describe issuer;
+mysql> DESCRIBE Issuer;
 +-----------+--------------+------+-----+---------+-------+
 | Field     | Type         | Null | Key | Default | Extra |
 +-----------+--------------+------+-----+---------+-------+
@@ -274,15 +264,31 @@ mysql> describe issuer;
 | issuer_C  | varchar(15)  | NO   |     | NULL    |       |
 | issuer_O  | varchar(255) | NO   |     | NULL    |       |
 | issuer_OU | varchar(255) | NO   |     | NULL    |       |
-| issuer_CN | varchar(255) | NO   | UNI | NULL    |       |
+| issuer_CN | varchar(255) | NO   |     | NULL    |       |
 +-----------+--------------+------+-----+---------+-------+
 5 rows in set (0.00 sec)
 
-mysql> describe issuer_certificate;
+mysql> DESCRIBE Subject;
++---------------+--------------+------+-----+---------+-------+
+| Field         | Type         | Null | Key | Default | Extra |
++---------------+--------------+------+-----+---------+-------+
+| subj_srNo     | int          | NO   | PRI | NULL    |       |
+| subj_C        | varchar(15)  | NO   |     | NULL    |       |
+| subj_O        | varchar(255) | YES  |     | NULL    |       |
+| subj_teleNum  | varchar(15)  | NO   | UNI | NULL    |       |
+| subj_postCode | int          | NO   |     | NULL    |       |
+| subj_ST       | varchar(20)  | NO   |     | NULL    |       |
+| subj_CN       | varchar(20)  | NO   |     | NULL    |       |
+| subj_OU       | varchar(20)  | YES  |     | NULL    |       |
+| subj_Email    | varchar(50)  | NO   | UNI | NULL    |       |
++---------------+--------------+------+-----+---------+-------+
+9 rows in set (0.00 sec)
+
+mysql> DESCRIBE Issuer_Certificate;
 +----------------------+--------------+------+-----+---------+-------+
 | Field                | Type         | Null | Key | Default | Extra |
 +----------------------+--------------+------+-----+---------+-------+
-| issuer_cert_srNo     | int          | NO   | PRI | NULL    |       |
+| issuer_cert_srNo     | varchar(64)  | NO   | PRI | NULL    |       |
 | issuer_ID            | varchar(20)  | YES  | MUL | NULL    |       |
 | iCert_version        | varchar(10)  | NO   |     | NULL    |       |
 | iCert_type           | varchar(20)  | NO   |     | NULL    |       |
@@ -304,21 +310,38 @@ mysql> describe issuer_certificate;
 | iCert_CRL            | varchar(255) | NO   |     | NULL    |       |
 | raw_iCert            | text         | NO   |     | NULL    |       |
 +----------------------+--------------+------+-----+---------+-------+
-21 rows in set (0.01 sec)
+21 rows in set (0.00 sec)
 
-mysql> describe login;
-+-----------+-------------+------+-----+---------+-------+
-| Field     | Type        | Null | Key | Default | Extra |
-+-----------+-------------+------+-----+---------+-------+
-| login_id  | varchar(50) | NO   | PRI | NULL    |       |
-| pass      | varchar(20) | NO   |     | NULL    |       |
-| role      | varchar(50) | NO   |     | NULL    |       |
-| username  | varchar(50) | NO   |     | NULL    |       |
-| issuer_id | varchar(20) | NO   | MUL | NULL    |       |
-+-----------+-------------+------+-----+---------+-------+
-5 rows in set (0.00 sec)
+mysql> DESCRIBE Certificate;
++----------------------------+--------------+------+-----+---------+-------+
+| Field                      | Type         | Null | Key | Default | Extra |
++----------------------------+--------------+------+-----+---------+-------+
+| serial_number              | varchar(64)  | NO   | PRI | NULL    |       |
+| issue_date                 | date         | NO   |     | NULL    |       |
+| expiry_date                | date         | NO   |     | NULL    |       |
+| version                    | varchar(10)  | NO   |     | NULL    |       |
+| cert_type                  | varchar(20)  | NO   |     | NULL    |       |
+| issuer_cert_srNo           | varchar(64)  | YES  | MUL | NULL    |       |
+| subj_srNo                  | int          | YES  | MUL | NULL    |       |
+| cert_fp_Digest             | varchar(10)  | NO   |     | NULL    |       |
+| cert_fp_algo               | varchar(40)  | NO   |     | NULL    |       |
+| cert_public_key            | varchar(600) | NO   |     | NULL    |       |
+| cert_publicKey_algo        | varchar(5)   | YES  |     | NULL    |       |
+| cert_publicKey_size        | int          | YES  |     | NULL    |       |
+| cert_publicKey_digest      | varchar(5)   | YES  |     | NULL    |       |
+| cert_publicKey_digest_algo | varchar(60)  | YES  |     | NULL    |       |
+| cert_BC_subjType           | varchar(20)  | YES  |     | NULL    |       |
+| cert_BC_MpathL             | varchar(20)  | YES  |     | NULL    |       |
+| cert_key_usage             | varchar(20)  | YES  |     | NULL    |       |
+| cert_sign                  | varchar(600) | NO   |     | NULL    |       |
+| cert_sign_algo             | varchar(50)  | NO   |     | NULL    |       |
+| cert_ocsp_url              | varchar(50)  | YES  |     | NULL    |       |
+| cert_CRL_distPt            | varchar(255) | NO   |     | NULL    |       |
+| raw_certificate            | text         | NO   |     | NULL    |       |
++----------------------------+--------------+------+-----+---------+-------+
+22 rows in set (0.00 sec)
 
-mysql> describe revocation_data;
+mysql> DESCRIBE Revocation_Data;
 +------------------+--------------+------+-----+---------+-------+
 | Field            | Type         | Null | Key | Default | Extra |
 +------------------+--------------+------+-----+---------+-------+
@@ -328,20 +351,16 @@ mysql> describe revocation_data;
 +------------------+--------------+------+-----+---------+-------+
 3 rows in set (0.00 sec)
 
-mysql> describe subject;
+mysql> DESCRIBE Cert_usage;
 +---------------+--------------+------+-----+---------+-------+
 | Field         | Type         | Null | Key | Default | Extra |
 +---------------+--------------+------+-----+---------+-------+
-| subj_srNo     | int          | NO   | PRI | NULL    |       |
-| subj_C        | varchar(15)  | NO   |     | NULL    |       |
-| subj_O        | varchar(255) | YES  |     | NULL    |       |
-| subj_teleNum  | varchar(15)  | NO   | UNI | NULL    |       |
-| subj_postCode | int          | NO   |     | NULL    |       |
-| subj_ST       | varchar(20)  | NO   |     | NULL    |       |
-| subj_CN       | varchar(20)  | NO   |     | NULL    |       |
-| subj_OU       | varchar(20)  | YES  |     | NULL    |       |
-| subj_Email    | varchar(50)  | NO   | UNI | NULL    |       |
+| serial_number | varchar(64)  | NO   | PRI | NULL    |       |
+| time_stamp    | datetime     | NO   |     | NULL    |       |
+| remark        | varchar(255) | YES  |     | NULL    |       |
+| count         | int          | YES  |     | NULL    |       |
 +---------------+--------------+------+-----+---------+-------+
-9 rows in set (0.00 sec)
+4 rows in set (0.00 sec)
 
-mysql> ^K^C
+mysql>
+mysql>
