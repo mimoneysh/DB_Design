@@ -83,8 +83,8 @@ CREATE TABLE  Certificate(
     version VARCHAR(10) NOT NULL,
     cert_type VARCHAR(20) NOT NULL,
     
-    issuer_id VARCHAR(20),    
-    FOREIGN KEY (issuer_id) REFERENCES Issuer(issuer_id),
+    -- issuer_id VARCHAR(20),    
+    -- FOREIGN KEY (issuer_id) REFERENCES Issuer(issuer_id),
     
     issuer_cert_srNo VARCHAR (64),
     FOREIGN KEY (issuer_cert_srNo) REFERENCES Issuer_Certificate(issuer_cert_srNo),
