@@ -24,7 +24,7 @@ CREATE TABLE Issuer (
     issuer_OU VARCHAR(255) NOT NULL,
     
     issuer_CN VARCHAR(255) NOT NULL,
-    UNIQUE (issuer_CN)
+    
     
 );
 
