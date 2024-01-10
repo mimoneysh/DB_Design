@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-01-10T04:05:33.787Z" agent="Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:121.0) Gecko/20100101 Firefox/121.0" etag="CFt8oEpeL7VR6REupkzW" version="22.1.17" type="github">
+<mxfile host="app.diagrams.net" modified="2024-01-10T04:06:56.641Z" agent="Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:121.0) Gecko/20100101 Firefox/121.0" etag="2s8rEKKuoFfqxy3G5Y1O" version="22.1.17" type="github">
   <diagram name="Page-1" id="Z4D-REcWQsaUOZwEIkcD">
     <mxGraphModel dx="2520" dy="1575" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
       <root>
@@ -331,7 +331,7 @@
             <mxPoint x="1000" y="410" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="WRyrR3sKkJGf3UOGzim1-118" value="End User" style="shape=rhombus;perimeter=rhombusPerimeter;whiteSpace=wrap;html=1;align=center;rounded=0;labelBackgroundColor=none;fillColor=#09555B;strokeColor=#BAC8D3;fontColor=#EEEEEE;" parent="1" vertex="1">
+        <mxCell id="WRyrR3sKkJGf3UOGzim1-118" value="&lt;div&gt;Issued to&lt;br&gt;&lt;/div&gt;&lt;div&gt;(End User)&lt;/div&gt;" style="shape=rhombus;perimeter=rhombusPerimeter;whiteSpace=wrap;html=1;align=center;rounded=0;labelBackgroundColor=none;fillColor=#09555B;strokeColor=#BAC8D3;fontColor=#EEEEEE;" parent="1" vertex="1">
           <mxGeometry x="1410" y="320" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="WRyrR3sKkJGf3UOGzim1-119" value="serial_number" style="ellipse;whiteSpace=wrap;html=1;align=center;fontStyle=4;rounded=0;labelBackgroundColor=none;fillColor=#09555B;strokeColor=#BAC8D3;fontColor=#EEEEEE;" parent="1" vertex="1">
