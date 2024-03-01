@@ -1,0 +1,177 @@
+DROP DATABASE IF EXISTS testDB;
+
+CREATE DATABASE testDB;
+SHOW DATABASES;
+
+USE testDB;
+
+
+DROP TABLE IF EXISTS Subject;
+
+CREATE TABLE Subject (
+    subj_srNo INT PRIMARY KEY,
+    subj_C VARCHAR(15) NOT NULL,
+    subj_O VARCHAR(255),
+    subj_teleNum VARCHAR(15) UNIQUE NOT NULL,
+    subj_postCode INT NOT NULL,
+    subj_ST VARCHAR(20) NOT NULL,
+    subj_CN VARCHAR(20) NOT NULL,
+    subj_OU VARCHAR(20),
+    subj_Email VARCHAR(50) UNIQUE NOT NULL
+);
+
+DROP TABLE IF EXISTS Issuer;
+
+CREATE TABLE Issuer (
+    issuer_id VARCHAR(20) PRIMARY KEY,
+    issuer_C VARCHAR(15) NOT NULL,
+    issuer_O VARCHAR(255) NOT NULL,
+    issuer_OU VARCHAR(255) NOT NULL,
+    
+    issuer_CN VARCHAR(255) NOT NULL
+    
+    
+);
+
+DROP TABLE IF EXISTS Login;
+
+create TABLE Login (
+	login_id VARCHAR(50) PRIMARY KEY,
+    pass VARCHAR(50) NOT NULL,
+    role VARCHAR(50)NOT NULL,
+    username VARCHAR(50)NOT NULL,
+    issuer_id VARCHAR(20) NOT NULL, -- foreign key can be null for admin purpose
+    FOREIGN KEY (issuer_id) REFERENCES Issuer(issuer_id)
+);
+
+DROP TABLE IF EXISTS Issuer_Certificate;
+
+
+CREATE TABLE Issuer_Certificate (
+    issuer_cert_srNo VARCHAR (64) PRIMARY KEY,
+    issuer_ID VARCHAR(20),
+    FOREIGN KEY (issuer_ID) REFERENCES Issuer(issuer_id),
+    
+    iCert_version VARCHAR(10) NOT NULL,
+    iCert_type VARCHAR(20) NOT NULL,
+    iCert_issue_date DATE NOT NULL,
+    iCert_expiry_date DATE NOT NULL,
+    iCert_fp_digest VARCHAR(10) NOT NULL,
+    iCert_fp_algo VARCHAR(255) NOT NULL,
+    iCert_pk VARCHAR(600) NOT NULL,
+    iCert_pk_algo VARCHAR(5),
+    iCert_pk_size INT,
+    iCert_pk_digest VARCHAR(6),-- create it 6
+    iCert_pk_digest_algo VARCHAR(50),
+    iCert_BC_subjType VARCHAR(20),
+    iCert_BC_maxPathL VARCHAR(20),
+    iCert_key_usage VARCHAR(20),
+    iCert_sign VARCHAR(600) NOT NULL,
+    iCert_sign_algo VARCHAR(50) NOT NULL,
+    iCert_ocsp_url VARCHAR(50),
+    iCert_CRL VARCHAR(255) NOT NULL,
+    raw_iCert TEXT NOT NULL
+);
+
+
+DROP TABLE IF EXISTS Certificate;
+
+CREATE TABLE  Certificate(
+    serial_number VARCHAR (64) PRIMARY KEY,
+    issue_date DATE NOT NULL,
+    expiry_date DATE NOT NULL,
+    version VARCHAR(10) NOT NULL,
+    cert_type VARCHAR(20) NOT NULL,
+
+    -- issuer_id VARCHAR(20),    
+    -- FOREIGN KEY (issuer_id) REFERENCES Issuer(issuer_id),
+    
+    issuer_cert_srNo VARCHAR (64),
+    FOREIGN KEY (issuer_cert_srNo) REFERENCES Issuer_Certificate(issuer_cert_srNo),
+    
+    subj_srNo INT,
+    FOREIGN KEY (subj_srNo) REFERENCES Subject(subj_srNo),
+    
+    cert_fp_Digest VARCHAR (10) NOT NULL,
+    cert_fp_algo VARCHAR (40) NOT NULL,
+    
+    cert_public_key  VARCHAR(600) NOT NULL,
+    cert_publicKey_algo VARCHAR(5),
+    cert_publicKey_size INT,
+    cert_publicKey_digest VARCHAR(6),-- change to 6 sha 256
+    cert_publicKey_digest_algo  VARCHAR(60),
+    
+    cert_BC_subjType VARCHAR(20),
+    cert_BC_MpathL VARCHAR(20),
+    
+    cert_key_usage VARCHAR(20),
+    
+    cert_sign VARCHAR(600) NOT NULL,
+    cert_sign_algo VARCHAR(50) NOT NULL,
+    
+    cert_ocsp_url VARCHAR (50),
+    cert_CRL_distPt VARCHAR(255) NOT NULL,
+    raw_certificate TEXT NOT NULL
+);
+
+
+
+DROP TABLE IF EXISTS Cert_usage;
+
+create TABLE Cert_usage(
+    row_id INT AUTO_INCREMENT PRIMARY key,
+    serial_number VARCHAR (64),
+    FOREIGN KEY (serial_number) REFERENCES Certificate(serial_number),
+    time_stamp DATETIME NOT NULL,
+    remark VARCHAR(255),
+    count INT     
+    )
+    AUTO_INCREMENT=1;
+    
+DROP TABLE IF EXISTS Revocation_Data;
+
+create TABLE Revocation_Data(
+    serial_number VARCHAR (64) PRIMARY KEY,
+    FOREIGN KEY (serial_number) REFERENCES Certificate(serial_number),
+    revoke_date_time DATETIME NOT NULL,
+    reason VARCHAR(255)    
+    );
+
+
+
+
+DROP TABLE IF EXISTS Audit_Trail;    
+
+ create TABLE Audit_Trail(
+     
+     audit_trail_srNo INT AUTO_INCREMENT PRIMARY KEY,
+     login_id VARCHAR(50),
+     time_stamp DATETIME NOT NULL,
+     ip_address VARCHAR (40) NOT NULL,
+     action_type VARCHAR(255) NOT NULL,
+     remark VARCHAR(255),
+     lattitude DECIMAL (9,6),
+     longitude DECIMAL (9,6),
+     login_place VARCHAR(20),
+     FOREIGN KEY (login_id) REFERENCES Login(login_id) 
+     
+	)AUTO_INCREMENT=101;
+ 
+
+
+
+
+SHOW TABLES;
+
+
+-- CHECK CREATION
+
+DESCRIBE Audit_Trail;
+DESCRIBE Login;
+DESCRIBE Issuer;
+DESCRIBE Subject;
+DESCRIBE Issuer_Certificate;
+DESCRIBE Certificate;
+DESCRIBE Revocation_Data;
+DESCRIBE Cert_usage;
+
